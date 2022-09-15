@@ -34,8 +34,8 @@ class barvinn_testbench_base extends BaseObj;
         this.predictor_silent_mode = predictor_silent_mode;
         // For RISC-V regression tests, we initialize ram at run stage
         if (rv_reg_tests==0) begin
-            this.firmware = cfg.firmware;
-            this.rodata = cfg.rodata;
+            this.firmware = "C:\\work\\BARVINN\\csrc\\conv\\build\\conv_text.hex";
+            this.rodata = "C:\\work\\BARVINN\\csrc\\conv\\build\\conv_data.hex";
             // read hex file and store the first n words to the ram
             instr_q = process_hex_file(firmware, logger, `NUM_INSTR_WORDS); 
             rodata_q = process_hex_file(rodata, logger, `NUM_INSTR_WORDS); 

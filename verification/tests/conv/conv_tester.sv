@@ -14,8 +14,8 @@ class conv_tester extends barvinn_testbench_base;
         // Weight tensor that was written into MVU rams
         // w_data_q_t w_data;
         // write_weight_data("/users/hemmat/MyRepos/BARVINN/weight.txt", 0, 0, w_data);
-        write_weight_data("/users/hemmat/MyRepos/BARVINN/verification/tests/conv/weight.hex", 0, 0);
-        write_input_data("/users/hemmat/MyRepos/BARVINN/verification/tests/conv/input.hex", 0, 0);
+        write_weight_data("C:\\work\\BARVINN\\verification\\tests\\conv\\weight.hex", 0, 0);
+        write_input_data("C:\\work\\BARVINN\\verification\\tests\\conv\\input.hex", 0, 0);
         // Put DUT to reset and relax memory interface
         logger.print("Initializing MVUs...");
         super.mvu_init();
