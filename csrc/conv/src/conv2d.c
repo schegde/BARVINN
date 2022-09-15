@@ -32,11 +32,17 @@ void conv3x3_64_stream(int hart_id, int iofst, int oofst, int wofst, int hart_lo
 
 
     for (int i=0; i<4; i++){
+        int sum = 0;
         SET_CSR(CSR_MVUWBASEPTR, weight_addr);
         SET_CSR(CSR_MVUOBASEPTR, output_addr);
         SET_CSR(CSR_MVUIBASEPTR, input_addr);
         SET_CSR(CSR_MVUCOMMAND, 0x40000087); // counter=135, mul_mode=1
+
+        // while (sum < 50){
+        //     sum = sum+1;
+        // }
         wait_for_mvu_irq();
+        
         output_addr += 2;
         input_addr  += 64;
     }
